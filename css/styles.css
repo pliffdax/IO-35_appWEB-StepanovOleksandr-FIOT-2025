@@ -125,7 +125,7 @@ body {
 
 .category {
   display: inline-block;
-  width: 30%;
+  width: 25%;
   margin: 0 1.5%;
   vertical-align: top;
   position: relative;
@@ -141,7 +141,7 @@ body {
 
 .category .btn {
   position: absolute;
-  bottom: 32px;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--header-bg);
@@ -149,7 +149,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-  width: 180px;
+  width: 160px;
   text-align: center;
   padding: 12px 0;
   border-radius: 6px;
