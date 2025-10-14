@@ -1,0 +1,493 @@
+:root {
+  --header-bg: #b9c7e6;
+  --header-shadow: rgba(0, 0, 0, 0.15);
+  --text: #ffffff;
+  --underline: #ffffff;
+  --gap: 72px;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.site-header {
+  background: var(--header-bg);
+  box-shadow: 0 4px 8px var(--header-shadow);
+}
+
+.site-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--gap);
+}
+
+.main-nav a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: var(--underline);
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.main-nav a[aria-current="page"] {
+  font-weight: 700;
+}
+.main-nav a[aria-current="page"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 520px;
+  margin-left: 60px
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f2b2b;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.05rem;
+  color: #5e5e5e;
+  line-height: 1.6;
+}
+
+.hero-image {
+  position: relative;
+  float: right;
+  width: 48%;
+  text-align: right;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+#categories {
+  text-align: center;
+  padding: 60px 0;
+  background: #fff;
+}
+
+.category {
+  display: inline-block;
+  width: 30%;
+  margin: 0 1.5%;
+  vertical-align: top;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.category img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.category .btn {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--header-bg);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 180px;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+
+.category .btn:hover {
+  background: #9fb2dc;
+}
+
+#about-preview {
+  display: block;
+  padding: 0 0 80px;
+  background: #fff;
+}
+
+#about-preview > h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f2b2b;
+  margin: 0 0 32px 60px;
+}
+
+.about-container {
+  position: relative;
+  overflow: visible;
+}
+
+.about-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.about-text {
+  float: left;
+  width: 52%;
+  max-width: 520px;
+  margin-left: 60px;
+  color: #2f2b2b;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.about-text p { margin: 0 0 16px; }
+
+.about-image {
+  position: relative;
+  float: right;           /* вернули в общую сетку с .about-text (float:left) */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;  /* прижимаем фото к низу блока */
+  margin-right: 80px;
+  min-height: 360px;      /* можно 340–380 под макет */
+  overflow: visible;
+}
+
+.about-image .bg-shape {
+  position: absolute;
+  right: -80px;   /* сместили чуть внутрь, чтобы не обрезалось */
+  bottom: 0;      /* прижали к низу */
+  width: 480px;   /* было 720 — сделали поменьше */
+  height: auto;
+  z-index: 0;
+}
+
+.about-image .women {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px; /* было 520 — чуть меньше */
+  height: auto;
+  display: block;   /* убирает возможный “просвет” снизу у inline-элемента */
+}
+
+.features {
+  background: rgba(185,199,230,0.35);
+  padding: 28px 60px;
+  text-align: center;
+  font-size: 0;
+}
+
+.features h3 {
+  margin: 0 0 18px 0;
+  text-align: left;
+  color: #989ec3;
+  font-size: 1.6rem;
+  font-weight: 100;
+}
+
+.feature {
+  display: inline-block;
+  vertical-align: top;
+  width: 23%;
+  margin: 0 1%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.feature img {
+  display: block;
+  height: 72px;
+  width: auto;
+  margin: 6px auto 12px;
+}
+
+.feature p {
+  margin: 0;
+  color: #2f2b2b;
+  line-height: 1.45;
+  max-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+}
+
+@media (max-width: 1100px){
+  .feature{ width: 31%; margin: 1% 1%; }
+}
+
+@media (max-width: 900px){
+  .feature{ width: 47%; margin: 1.5% 1.5%; }
+}
+
+@media (max-width: 600px){
+  .feature{ width: 100%; margin: 8px 0; }
+}
+
+#catalog {
+  padding: 0 60px 60px;
+  background: #fff;
+}
+
+#catalog > h2 {
+  margin: 0 0 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f2b2b;
+}
+
+.catalog-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.catalog-item{
+  flex: 1 1 calc((100% - 2 * 28px) / 3);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.08),
+    0 10px 20px rgba(255,105,135,0.18);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.catalog-item:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.1),
+    0 14px 26px rgba(255,105,135,0.22);
+}
+
+.catalog-item img{
+  display:block;
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.catalog-item h3{
+  margin:14px 16px 0;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#2f2b2b;
+}
+
+.catalog-meta{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  margin:6px 16px 16px;
+  font-size:.98rem;
+  line-height:1.4;
+  color:#5e5e5e;
+}
+
+.catalog-meta .desc{ margin-right:12px; }
+.catalog-meta .price{
+  color:#2f2b2b;
+  font-weight:600;
+}
+
+#feedback {
+  padding: 60px 0 0;
+  background: #EEF2FA;
+}
+
+#feedback > h2 {
+  margin: 0 0 24px 60px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f2b2b;
+}
+
+.feedback-list {
+  padding: 0 60px 24px;
+}
+
+.feedback-list blockquote {
+  margin: 0 0 18px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px 20px;
+  box-shadow:
+    0 6px 14px rgba(0,0,0,.08),
+    0 10px 20px rgba(255,105,135,.18);
+}
+
+.feedback-list blockquote p {
+  margin: 0;
+  color: #2f2b2b;
+  line-height: 1.55;
+}
+
+.feedback-form-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #2f2b2b;
+  margin: 24px 60px 12px;
+}
+
+.feedback-form {
+  padding: 0 60px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  border: 1px solid #d7deee;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(185,199,230,.25);
+  color: #2f2b2b;
+  font: inherit;
+  outline: none;
+}
+
+.feedback-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+  color: #8a8fa3;
+  opacity: 1;
+}
+
+.feedback-form button {
+  align-self: flex-start;
+  width: auto;
+  background: #FFC2C7;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,.18);
+  cursor: pointer;
+  transition: box-shadow .1s ease, transform .1s ease;
+}
+
+.feedback-form button:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,.2);
+  transform: translateY(-1px);
+}
+
+#contacts {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 40px 80px 36px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 25%;
+}
+
+.footer-left .logo img {
+  display: block;
+  height: 60px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.footer-left p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.footer-column {
+  width: 30%;
+}
+
+.footer-column h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-column p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  cursor: default;
+}
+
+.footer-column p:hover {
+  text-decoration: underline;
+  opacity: 1;
+}

@@ -4,22 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flower Design — Головна</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!-- ШАПКА -->
-  <header>
-    <div class="logo">
-      <img src="assets/images/logo.png" alt="Flower Design logo">
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="assets/images/logo.png" alt="Flower Design logo">
+      </a>
+
+      <nav class="main-nav" aria-label="Головна навігація">
+        <ul>
+          <li><a href="index.html" aria-current="page">Каталог</a></li>
+          <li><a href="about.html">Про нас</a></li>
+          <li><a href="#custom">Збери букет</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Каталог</a></li>
-        <li><a href="about.html">Про нас</a></li>
-        <li><a href="#custom">Збери букет</a></li>
-        <li><a href="#contacts">Контакти</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
@@ -38,31 +41,35 @@
     <section id="categories">
       <div class="category">
         <img src="assets/images/bouquets.png" alt="Букети">
-        <p>Букети</p>
+        <a href="#" class="btn">Букети</a>
       </div>
       <div class="category">
         <img src="assets/images/natural_flowers.png" alt="Живі квіти">
-        <p>Живі квіти</p>
+        <a href="#" class="btn">Живі квіти</a>
       </div>
       <div class="category">
         <img src="assets/images/own_bouquet.png" alt="Створи свій букет">
-        <p>"Свій" букет</p>
+        <a href="#" class="btn">"Свій" букет</a>
       </div>
     </section>
 
     <!-- ПРО НАС -->
     <section id="about-preview">
-      <h2>Про нас</h2>
-      <div class="about-container">
-        <div class="about-text">
-          <p>Яких квітів тут лише немає! І садові, і польові, і кімнатні у глиняних горщиках.
-          Тут представлена велика колекція кімнатних рослин: кактуси, фікуси, фіалки та багато інших.</p>
-        </div>
-        <div class="about-image">
-          <img src="assets/images/women.png" alt="Наша команда">
-        </div>
+    <h2>Про нас</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>Яких квітів тут лише немає! І садові, і польові, і кімнатні у глиняних горщиках. Очі розбігаються від такого достатку.</p>
+        <p>Тут представлена і багата колекція кімнатних рослин: кактуси різної форми та величини, ніжні фіалки, усипані квітами, аспарагуси, фікуси.</p>
       </div>
-      <div class="features">
+
+      <div class="about-image">
+        <img src="assets/images/abstract_background.png" alt="" class="bg-shape" />
+        <img src="assets/images/women.png" alt="Наша команда" class="women" />
+      </div>
+    </div>
+    <div class="features">
+      <h3>Працюємо для вас</h3>
+      <div class="features-wrap">
         <div class="feature">
           <img src="assets/images/constructor.png" alt="Конструктор унікального букету">
           <p>Конструктор унікального букету</p>
@@ -80,59 +87,62 @@
           <p>Вибір квітів для коханих, мам та друзів</p>
         </div>
       </div>
+    </div>
     </section>
 
     <!-- КАТАЛОГ (ТАБЛИЦЯ) -->
     <section id="catalog">
       <h2>Каталог</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Фото</th>
-            <th>Назва</th>
-            <th>Опис</th>
-            <th>Ціна, грн</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="assets/images/bouquet_cart1 1.png" alt="Ніжна свіжість"></td>
-            <td>Ніжна свіжість</td>
-            <td>Троянди та лілії</td>
-            <td>445</td>
-          </tr>
-          <tr>
-            <td><img src="assets/images/bouquet_cart2 1.png" alt="Сорбет"></td>
-            <td>Сорбет</td>
-            <td>Хризантеми та троянди</td>
-            <td>450</td>
-          </tr>
-          <tr>
-            <td><img src="assets/images/bouquet_cart3 1.png" alt="Yellow Song"></td>
-            <td>Yellow Song</td>
-            <td>Соняшники та солідаго</td>
-            <td>455</td>
-          </tr>
-          <tr>
-            <td><img src="assets/images/bouquet_cart4 1.png" alt="Ніжна свіжість"></td>
-            <td>Персиковий нектар</td>
-            <td>Лілії та троянди</td>
-            <td>455</td>
-          </tr>
-          <tr>
-            <td><img src="assets/images/bouquet_cart5 1.png" alt="Сорбет"></td>
-            <td>Аврора</td>
-            <td>Лілії та троянди</td>
-            <td>460</td>
-          </tr>
-          <tr>
-            <td><img src="assets/images/bouquet_cart6 1.png" alt="Yellow Song"></td>
-            <td>Класика кохання</td>
-            <td>Червоних троянд</td>
-            <td>465</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="catalog-grid">
+        <div class="catalog-item">
+          <img src="assets/images/bouquet_cart1 1.png" alt="Ніжна свіжість">
+          <h3>Ніжна свіжість</h3>
+          <div class="catalog-meta">
+            <p class="desc">Троянди та лілії</p>
+            <p class="price">445 грн</p>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <img src="assets/images/bouquet_cart2 1.png" alt="Сорбет">
+          <h3>Сорбет</h3>
+          <div class="catalog-meta">
+            <p class="desc">Хризантеми та троянди</p>
+            <p class="price">450 грн</p>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <img src="assets/images/bouquet_cart3 1.png" alt="Yellow Song">
+          <h3>Yellow Song</h3>
+          <div class="catalog-meta">
+            <p class="desc">Соняшники та солідаго</p>
+            <p class="price">455 грн</p>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <img src="assets/images/bouquet_cart4 1.png" alt="Персиковий нектар">
+          <h3>Персиковий нектар</h3>
+          <div class="catalog-meta">
+            <p class="desc">Лілії та троянди</p>
+            <p class="price">455 грн</p>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <img src="assets/images/bouquet_cart5 1.png" alt="Аврора">
+          <h3>Аврора</h3>
+          <div class="catalog-meta">
+            <p class="desc">Лілії та троянди</p>
+            <p class="price">460 грн</p>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <img src="assets/images/bouquet_cart6 1.png" alt="Класика кохання">
+          <h3>Класика кохання</h3>
+          <div class="catalog-meta">
+            <p class="desc">Червоні троянди</p>
+            <p class="price">465 грн</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ВІДГУКИ -->
@@ -148,55 +158,48 @@
       </div>
 
       <!-- ФОРМА -->
+      <h3 class="feedback-form-title">Додати відгук:</h3>
       <form class="feedback-form">
-        <label>Ваше ім'я:
-          <input type="text" name="name" required>
-        </label>
-        <label>Ваш відгук:
-          <textarea name="review" required></textarea>
-        </label>
+        <input type="text" name="name" placeholder="Ваше ім'я" required>
+        <textarea name="review" placeholder="Ваш відгук" required></textarea>
         <button type="submit">Відправити</button>
       </form>
     </section>
   </main>
 
-  <!-- ФУТЕР -->
   <footer id="contacts">
-    <section class="footer-left">
-      <div class="logo">
-        <img src="assets/images/logo.png" alt="Flower Design logo">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="Flower Design logo">
+        </div>
+        <p>Copyright © 2025</p>
       </div>
-      <p>Copyright © 2025</p>
-    </section>
-    <section class="footer-right">
-      <h3 class="footer-content-box-header">
-        Контакти
-      </h3>
-      <div class="footer-content-box">
-        <p>Контакти: +38 (095) 000 00 00</p>
-        <p>Контакти: +38 (097) 000 00 00</p>
-        <p>Ми працюємо щодобово</p>
+
+      <div class="footer-right">
+        <div class="footer-column">
+          <h3>Контакти</h3>
+          <p>(095) 000 00 00</p>
+          <p>(097) 000 00 00</p>
+          <p>Ми працюємо цілодобово</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Інформація</h3>
+          <p>Про нас</p>
+          <p>Хіт продажу</p>
+          <p>Відгуки</p>
+          <p>Доставка і оплата</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Каталог</h3>
+          <p>Збери свій букет</p>
+          <p>Живі квіти</p>
+          <p>Кімнатні рослини</p>
+        </div>
       </div>
-      <h3 class="footer-content-box-header">
-        Інформація
-      </h3>
-      <div class="footer-content-box">
-        <!-- пізніше перероблю ці <p> теги в <a> для посиланнь -->
-        <p>Про нас</p>
-        <p>Хіт продажу</p>
-        <p>Відгуки</p>
-        <p>Доставка і оплата</p>
-      </div>
-      <h3 class="footer-content-box-header">
-        Каталог
-      </h3>
-      <div class="footer-content-box">
-        <!-- пізніше перероблю ці <p> теги в <a> для посиланнь -->
-        <p>Збери свій букет</p>
-        <p>Живі квіти</p>
-        <p>Кімнатні рослини</p>
-      </div>
-    </section>
+    </div>
   </footer>
 </body>
 </html>
