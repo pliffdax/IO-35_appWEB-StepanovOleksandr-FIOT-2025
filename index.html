@@ -23,7 +23,7 @@
 
       <nav class="main-nav" aria-label="Головна навігація" data-state="closed">
         <ul>
-          <li><a href="index.html" aria-current="page">Каталог</a></li>
+          <li><a href="#catalog" aria-current="page">Каталог</a></li>
           <li><a href="about.html">Про нас</a></li>
           <li><a href="#custom">Збери букет</a></li>
           <li><a href="#contacts">Контакти</a></li>
@@ -152,6 +152,29 @@
       </div>
     </section>
 
+    <!-- КОНСТРУКТОР БУКЕТУ -->
+    <section id="custom">
+      <h2>Збери свій букет</h2>
+      <div class="custom-wrap">
+        <div class="custom-text">
+          <p>
+            Не знайшли ідеальний варіант у каталозі? Зберіть власний букет — ми допоможемо підібрати квіти, упаковку
+            та листівку під ваш привід.
+          </p>
+          <ul class="custom-steps">
+            <li>Оберіть стиль і кольорову гаму.</li>
+            <li>Додайте улюблені квіти та зелень.</li>
+            <li>Підберіть упаковку й підпис до листівки.</li>
+            <li>Залиште контакт — ми уточнимо деталі та час доставки.</li>
+          </ul>
+          <a class="btn" href="#contacts">Хочу консультацію</a>
+        </div>
+        <div class="custom-image">
+          <img src="assets/images/constructor.png" alt="Конструктор букету">
+        </div>
+      </div>
+    </section>
+
     <!-- ВІДГУКИ -->
     <section id="feedback">
       <h2>Відгуки</h2>
@@ -166,10 +189,17 @@
 
       <!-- ФОРМА -->
       <h3 class="feedback-form-title">Додати відгук:</h3>
-      <form class="feedback-form">
-        <input type="text" name="name" placeholder="Ваше ім'я" required>
-        <textarea name="review" placeholder="Ваш відгук" required></textarea>
+      <form class="feedback-form" novalidate>
+        <label class="sr-only" for="feedback-name">Ваше ім'я</label>
+        <input id="feedback-name" type="text" name="name" placeholder="Ваше ім'я" required aria-describedby="feedback-name-error">
+        <p class="form-error" id="feedback-name-error" aria-live="polite"></p>
+
+        <label class="sr-only" for="feedback-review">Ваш відгук</label>
+        <textarea id="feedback-review" name="review" placeholder="Ваш відгук" required aria-describedby="feedback-review-error"></textarea>
+        <p class="form-error" id="feedback-review-error" aria-live="polite"></p>
+
         <button type="submit">Відправити</button>
+        <p class="form-success" id="feedback-success" aria-live="polite"></p>
       </form>
     </section>
   </main>

@@ -14,6 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 (function(){
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', href);
+  });
+})();
+
+(function(){
   const btn = document.querySelector('.burger');
   const nav = document.querySelector('.main-nav');
   if(!btn || !nav) return;
@@ -43,5 +60,75 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.dataset.state='closed';
       btn.setAttribute('aria-expanded','false');
     }
+  });
+})();
+
+(function(){
+  const form = document.querySelector('.feedback-form');
+  if (!form) return;
+
+  const nameInput = form.querySelector('input[name="name"]');
+  const reviewInput = form.querySelector('textarea[name="review"]');
+  const nameError = document.getElementById('feedback-name-error');
+  const reviewError = document.getElementById('feedback-review-error');
+  const success = document.getElementById('feedback-success');
+
+  const MIN_NAME = 2;
+  const MIN_REVIEW = 15;
+
+  function clearSuccess(){
+    if (success) success.textContent = '';
+  }
+
+  function setError(input, errorEl, message){
+    if (input) input.classList.add('is-error');
+    if (errorEl) {
+      errorEl.textContent = message;
+      errorEl.classList.add('is-visible');
+    }
+  }
+
+  function clearError(input, errorEl){
+    if (input) input.classList.remove('is-error');
+    if (errorEl) {
+      errorEl.textContent = '';
+      errorEl.classList.remove('is-visible');
+    }
+  }
+
+  function validate(){
+    clearSuccess();
+    let ok = true;
+
+    const name = (nameInput?.value || '').trim();
+    if (name.length < MIN_NAME) {
+      ok = false;
+      setError(nameInput, nameError, `Ім'я має містити щонайменше ${MIN_NAME} символи.`);
+    } else {
+      clearError(nameInput, nameError);
+    }
+
+    const review = (reviewInput?.value || '').trim();
+    if (review.length < MIN_REVIEW) {
+      ok = false;
+      setError(reviewInput, reviewError, `Відгук має містити щонайменше ${MIN_REVIEW} символів.`);
+    } else {
+      clearError(reviewInput, reviewError);
+    }
+
+    return ok;
+  }
+
+  nameInput?.addEventListener('input', validate);
+  reviewInput?.addEventListener('input', validate);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    form.reset();
+    clearError(nameInput, nameError);
+    clearError(reviewInput, reviewError);
+    if (success) success.textContent = 'Дякуємо! Ваш відгук прийнято.';
   });
 })();

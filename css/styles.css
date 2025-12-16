@@ -14,6 +14,18 @@ body {
   font-family: "Source Code Pro", "Segoe UI", sans-serif;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .site-header {
   background: var(--header-bg);
   box-shadow: 0 4px 8px var(--header-shadow);
@@ -286,6 +298,61 @@ body {
   background: #fff;
 }
 
+#custom {
+  padding: 0 60px 60px;
+  background: #fff;
+}
+
+#custom > h2 {
+  margin: 0 0 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f2b2b;
+  text-align: center;
+}
+
+.custom-wrap {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.custom-text {
+  flex: 1;
+  color: #5e5e5e;
+  line-height: 1.6;
+}
+
+.custom-steps {
+  margin: 14px 0 18px;
+  padding-left: 18px;
+}
+
+.custom-steps li {
+  margin: 8px 0;
+}
+
+.custom-image {
+  flex: 0 0 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-image img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+}
+
+@media (max-width: 900px){
+  .custom-wrap{ flex-direction: column; align-items: flex-start; }
+  .custom-image{ flex-basis: auto; width: 240px; }
+}
+
 #catalog > h2 {
   margin: 0 0 24px;
   font-size: 2rem;
@@ -415,6 +482,31 @@ body {
 .feedback-form textarea {
   min-height: 120px;
   resize: vertical;
+}
+
+.feedback-form .is-error {
+  border-color: #c0392b;
+  background: rgba(192,57,43,.08);
+}
+
+.form-error {
+  margin: -10px 0 0;
+  font-size: .92rem;
+  line-height: 1.2;
+  color: #c0392b;
+  display: none;
+}
+
+.form-error.is-visible {
+  display: block;
+}
+
+.form-success {
+  margin: -6px 0 0;
+  font-size: .92rem;
+  line-height: 1.2;
+  color: #2e7d32;
+  min-height: 1.2em;
 }
 
 .feedback-form input::placeholder,
